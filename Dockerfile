@@ -26,5 +26,6 @@ RUN composer install
 COPY 000-default.conf /etc/apache2/sites-available
 
 RUN a2enmod php8.0 rewrite
+RUN service apache2 restart
 EXPOSE 80
 CMD apachectl -D FOREGROUND
