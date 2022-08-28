@@ -19,9 +19,10 @@ WORKDIR /var/www/html
 
 RUN rm index.html
 COPY Seoland/ /var/www/html/
-RUN chmod -R 777 .
+
 RUN composer update
 RUN composer install
+RUN chmod -R 777 .
 
 COPY 000-default.conf /etc/apache2/sites-available
 
